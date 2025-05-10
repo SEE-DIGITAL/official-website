@@ -1,1 +1,15 @@
-/* You can add global styles to this file, and also import other style files */
+  /* Ensure page content starts below navbar */
+  body {
+    padding-top: 80px;
+    background: #131313;
+    font-family: 'Lato', sans-serif;
+    color: var(--text-color);
+  }
+  :root {
+    --bg-color: #ffffff;
+    --text-color: #ffffff;
+    --primary-color: #007bff;
+    --shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  

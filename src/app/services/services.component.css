@@ -1,0 +1,94 @@
+section.service {
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; /* Stack content vertically */
+  border-bottom: 1px solid #ddd;
+  scroll-snap-align: start;
+  position: relative;
+  text-align: center; /* Center text horizontally */
+}
+
+.service .content {
+  max-width: 35%;
+  z-index: 10;
+  font-size: 1.2rem;
+  text-align: left;
+  margin-bottom: 50px;
+}
+
+/* Cube Styling */
+.cube-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  perspective: 1500px;
+  width: 300px;
+  height: 300px;
+  z-index: 10;
+}
+
+.cube {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 1.3s cubic-bezier(0.25, 1.5, 0.5, 1);
+}
+.face {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(to bottom right, #007bff, #00c9ff); /* Default Gradient */
+    border: 1px solid #fff;
+    opacity: 0.9;
+  }
+  
+  /* Custom background colors for each face */
+  .front {
+    background: linear-gradient(to bottom right, #004d99, #00bfff); /* Deep Blue */
+    transform: translateZ(150px);
+  }
+  
+  .back {
+    background: linear-gradient(to bottom right, #ff7f00, #ff6f20); /* Dark Orange */
+    transform: rotateY(180deg) translateZ(150px);
+  }
+  
+  .right {
+    background: linear-gradient(to bottom right, #1e90ff, #4682b4); /* Dodger Blue */
+    transform: rotateY(90deg) translateZ(150px);
+  }
+  
+  .left {
+    background: linear-gradient(to bottom right, #ff4500, #ff6347); /* Orange Red */
+    transform: rotateY(-90deg) translateZ(150px);
+  }
+  
+  .top {
+    background: linear-gradient(to bottom right, #4169e1, #6495ed); /* Royal Blue */
+    transform: rotateX(90deg) translateZ(150px);
+  }
+  
+  .bottom {
+    background: linear-gradient(to bottom right, #ff8c00, #ffa500); /* Orange */
+    transform: rotateX(-90deg) translateZ(150px);
+  }
+  
+/* Adjust content position based on the face */
+.content-left {
+  position: absolute;
+  left: 10px;
+}
+
+.content-right {
+  position: absolute;
+  right: 10px;
+}

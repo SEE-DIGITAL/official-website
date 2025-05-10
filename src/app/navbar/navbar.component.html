@@ -1,0 +1,30 @@
+<!-- Navbar -->
+<div class="navbar">
+    <img class="logo" src="./assets/logo.png" alt="Logo" />
+    <div class="navbar-right">
+      <!-- <button class="icon-button">
+        <i class="fas fa-user"></i>
+      </button> -->
+    </div>
+  </div>
+  
+  <button class="center-tab" (click)="togglePopover()">
+    <i class="fas" [ngClass]="showPopover ? 'fa-times' : 'fa-bars'"></i>
+  </button>
+  
+  <!-- Popover -->
+  <div class="popover" *ngIf="showPopover">
+    <ul class="popover-menu">
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Portfolio</a></li>
+      <li><a href="#">Témoignages</a></li>
+      <li><a href="#">Processus</a></li>
+    </ul>
+    <div class="social-icons">
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+    </div>
+  </div>
+  
+  
