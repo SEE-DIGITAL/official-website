@@ -1,13 +1,12 @@
 section.service {
-  height: 90vh;
+  height: 50vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column; /* Stack content vertically */
-  border-bottom: 1px solid #ddd;
+  flex-direction: column; 
   scroll-snap-align: start;
   position: relative;
-  text-align: center; /* Center text horizontally */
+  text-align: center;
 }
 
 .service .content {
@@ -16,6 +15,8 @@ section.service {
   font-size: 1.2rem;
   text-align: left;
   margin-bottom: 50px;
+  transition: transform 0.4s ease-out;
+  will-change: transform;
 }
 
 /* Cube Styling */
@@ -28,6 +29,15 @@ section.service {
   width: 300px;
   height: 300px;
   z-index: 10;
+} 
+
+.first-section{
+  transform: translateY(15%);
+  z-index: 1000;
+}
+.last-section{
+  transform: translateY(-25%);
+  z-index: 1000;
 }
 
 .cube {
@@ -36,6 +46,7 @@ section.service {
   position: relative;
   transform-style: preserve-3d;
   transition: transform 1.3s cubic-bezier(0.25, 1.5, 0.5, 1);
+  
 }
 .face {
     position: absolute;
@@ -91,4 +102,9 @@ section.service {
 .content-right {
   position: absolute;
   right: 10px;
+}
+
+.content p {
+  font-size: 1rem;
+  color: #d8d8d8;
 }

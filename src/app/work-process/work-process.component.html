@@ -1,0 +1,33 @@
+<section class="section-wrapper">
+  <!-- Single image on top of all cards -->
+  <section
+  class="services-header"
+  aria-labelledby="services-title"
+  #servicesHeader
+>
+  <div class="text-content">
+    <h2 class="section-title" id="services-title">Notre Processus</h2>
+    <p class="section-subtitle">
+      Voici comment nous transformons vos idées en projets concrets.
+    </p>
+  </div>
+</section>
+  <div class="section-image">
+    <img src="./assets/seeboo-process.png" alt="section image" class="top-image" />
+  </div>
+  <div class="accordion-wrapper">
+    <div class="accordion-card" *ngFor="let step of steps; let i = index" 
+         [ngStyle]="{ 'width': getCardWidth(i) }">
+      <div class="card-header" (click)="toggleAccordion(i)">
+        <h4>{{ step.title }}</h4>
+        <div class="card-header-content">
+          <p>{{ step.description }}</p>
+          <i class="fa-solid fa-circle-chevron-down icon-toggle" [ngClass]="{'open': openedIndex === i}"></i>
+        </div>
+      </div>
+      <div class="card-body" [class.open]="openedIndex === i">
+        <p>{{ step.content }}</p>
+      </div>
+    </div>
+  </div>
+</section>

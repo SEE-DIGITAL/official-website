@@ -13,3 +13,42 @@
   }
   
   
+.services-header {
+  text-align: left;
+}
+
+.text-content {
+  max-width: 800px;
+  /* border: 1px solid red; */
+  padding: 0 1rem;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin:0;
+  /* border: 1px solid blue; */
+  line-height: 1.2;
+  letter-spacing: 0.5px;
+}
+
+.section-subtitle {
+  /* border: 1px solid green; */
+  font-size: 1rem;
+  color: #b4b4b4;
+  line-height: 1.6;
+  margin: 0;
+  margin-bottom: 0;
+}
+
+/* Responsive pour petits écrans */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .section-subtitle {
+    font-size: 1.05rem;
+  }
+}

@@ -1,60 +1,100 @@
-<!-- Cube Container -->
-<div class="cube-container">
-  <div class="cube" #cube> <!-- Used ViewChild reference -->
-    <div class="face front">Design & Graphisme</div>
-    <div class="face right">Développement Web</div>
-    <div class="face back">Référencement & SEO</div>
-    <div class="face left">Photographie & Vidéo</div>
-    <div class="face top">Content & Community Management</div>
-    <div class="face bottom">Stratégie de Marque</div>
-  </div>
+<div #servicesSection class="services-wrapper" style="position: relative; overflow: hidden;">
+  <section
+    class="services-header"
+    aria-labelledby="services-title"
+    #servicesHeader
+  >
+    <div class="text-content">
+      <h2 class="section-title" id="services-title">Découvrez Nos Services</h2>
+      <p class="section-subtitle">
+        Nous combinons technologie de pointe, design créatif et stratégies
+        digitales personnalisées pour développer votre présence en ligne et
+        renforcer l'identité de votre marque.
+      </p>
+    </div>
+  </section>
+
+  <ng-container *ngIf="showCube">
+    <!-- Cube Container -->
+    <div class="cube-container">
+      <div class="cube" #cube>
+        <div class="face front">Design & Graphisme</div>
+        <div class="face right">Développement Web</div>
+        <div class="face back">Référencement & SEO</div>
+        <div class="face left">Photographie & Vidéo</div>
+        <div class="face top">Content & Community Management</div>
+        <div class="face bottom">Stratégie de Marque</div>
+      </div>
+    </div>
+  </ng-container>
+
+  <!-- Service Sections -->
+  <section class="service first-section" data-face="front">
+    <div class="content content-left">
+      <h2>Design & Graphisme</h2>
+      <p>
+        Création de visuels uniques et de contenus visuels qui renforcent
+        l'identité de votre marque, adaptés à tous les supports numériques.
+      </p>
+      <i class="fa-solid fa-circle-arrow-right"></i>
+    </div>
+  </section>
+
+  <section class="service" data-face="right">
+    <div class="content content-right">
+      <h2>Développement Web</h2>
+      <p>
+        Conception et développement de sites web responsives, modernes et
+        optimisés pour une expérience utilisateur fluide et un meilleur SEO.
+      </p>
+      <i class="fa-solid fa-circle-arrow-right"></i>
+    </div>
+  </section>
+
+  <section class="service" data-face="back">
+    <div class="content content-left">
+      <h2>Référencement & SEO</h2>
+      <p>
+        Optimisation SEO complète pour améliorer votre positionnement sur
+        Google, augmenter votre visibilité et générer du trafic organique
+        qualifié.
+      </p>
+      <i class="fa-solid fa-circle-arrow-right"></i>
+    </div>
+  </section>
+
+  <section class="service" data-face="left">
+    <div class="content content-right">
+      <h2>Photographie & Vidéo</h2>
+      <p>
+        Services professionnels de photographie et vidéo pour créer des visuels
+        percutants qui renforcent la présence de votre marque en ligne.
+      </p>
+      <i class="fa-solid fa-circle-arrow-right"></i>
+    </div>
+  </section>
+
+  <section class="service" data-face="top">
+    <div class="content content-left">
+      <h2>Stratégie de Marque</h2>
+      <p>
+        Développement d'une stratégie de marque complète qui définit votre
+        mission, vision et valeurs pour un impact maximal sur votre public
+        cible.
+      </p>
+      <i class="fa-solid fa-circle-arrow-right"></i>
+    </div>
+  </section>
+
+  <section class="service last-section" data-face="bottom"  #lastServiceSection style="border: 2px solid white;">
+    <div class="content content-right">
+      <h2>Content & Community Management</h2>
+      <p>
+        Création de contenu engageant et gestion de votre communauté pour
+        établir des relations durables et renforcer l'engagement sur les réseaux
+        sociaux.
+      </p>
+      <i class="fa-solid fa-circle-arrow-right"></i>
+    </div>
+  </section>
 </div>
-
-<!-- Service Sections -->
-<section class="service" data-face="front">
-  <div class="content content-left">
-    <h2>Design & Graphisme</h2>
-    <p>Création de visuels uniques et de contenus visuels qui renforcent l'identité de votre marque, adaptés à tous les supports numériques.</p>
-    <i class="fa-solid fa-circle-arrow-right"></i>
-  </div>
-</section>
-
-<section class="service" data-face="right">
-  <div class="content content-right">
-    <h2>Développement Web</h2>
-    <p>Conception et développement de sites web responsives, modernes et optimisés pour une expérience utilisateur fluide et un meilleur SEO.</p>
-    <i class="fa-solid fa-circle-arrow-right"></i>
-  </div>
-</section>
-
-<section class="service" data-face="back">
-  <div class="content content-left">
-    <h2>Référencement & SEO</h2>
-    <p>Optimisation SEO complète pour améliorer votre positionnement sur Google, augmenter votre visibilité et générer du trafic organique qualifié.</p>
-    <i class="fa-solid fa-circle-arrow-right"></i>
-  </div>
-</section>
-
-<section class="service" data-face="left">
-  <div class="content content-right">
-    <h2>Photographie & Vidéo</h2>
-    <p>Services professionnels de photographie et vidéo pour créer des visuels percutants qui renforcent la présence de votre marque en ligne.</p>
-    <i class="fa-solid fa-circle-arrow-right"></i>
-  </div>
-</section>
-
-<section class="service" data-face="top">
-  <div class="content content-left">
-    <h2>Stratégie de Marque</h2>
-    <p>Développement d'une stratégie de marque complète qui définit votre mission, vision et valeurs pour un impact maximal sur votre public cible.</p>
-    <i class="fa-solid fa-circle-arrow-right"></i>
-  </div>
-</section>
-
-<section class="service" data-face="bottom">
-  <div class="content content-right">
-    <h2>Content & Community Management</h2>
-    <p>Création de contenu engageant et gestion de votre communauté pour établir des relations durables et renforcer l'engagement sur les réseaux sociaux.</p>
-    <i class="fa-solid fa-circle-arrow-right"></i>
-  </div>
-</section>
