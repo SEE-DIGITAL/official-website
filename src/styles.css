@@ -1,9 +1,11 @@
-  /* Ensure page content starts below navbar */
+@import 'swiper/css';
+ /* Ensure page content starts below navbar */
   body {
     padding-top: 80px;
-    background: #131313;
+    background: black;
     font-family: 'Lato', sans-serif;
     color: var(--text-color);
+    overflow-x: hidden;
   }
   :root {
     --bg-color: #ffffff;
