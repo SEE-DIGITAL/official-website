@@ -1,0 +1,91 @@
+:host {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Make the page scrollable */
+    width: 100vw;
+    perspective: 3000px;
+    margin-bottom: 500px;
+  }
+
+  
+  .wrapper {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    width: calc(var(--w) / 2);
+    height: var(--h);
+    margin-left: calc(-1 * var(--w) / 4);
+  
+    
+  }
+  
+  .inner {
+    --w: 500px;
+    --h: 470px;
+    --translateZ: calc((var(--w) + var(--h)));
+    --rotateX: -15deg;
+    --perspective: 3000px;
+    --quantity: 13;
+    --angle-step: calc(200deg / var(--quantity)); /* wider spacing */
+    
+  
+    position: absolute;
+  
+    width: var(--w);
+    height: var(--h);
+    transform-style: preserve-3d;
+    transform: translate(-50%, -50%) 
+               perspective(var(--perspective)) 
+               rotateX(var(--rotateX)) 
+               rotateY(-90deg);
+    animation: sweep 30s linear infinite;
+    animation-delay: calc(
+    (30s / var(--quantity)) * (var(--position) - 1) - 30s
+  ) !important;
+  }
+  
+  @keyframes sweep {
+    0%   { transform: translate(-50%, -50%) perspective(var(--perspective)) rotateX(var(--rotateX)) rotateY(-90deg); }
+    49.999% { transform: translate(-50%, -50%) perspective(var(--perspective)) rotateX(var(--rotateX)) rotateY(90deg); }
+    50%   { transform: translate(-50%, -50%) perspective(var(--perspective)) rotateX(var(--rotateX)) rotateY(-90deg); }
+    100%  { transform: translate(-50%, -50%) perspective(var(--perspective)) rotateX(var(--rotateX)) rotateY(90deg); }
+  }
+  .wrapper:hover .inner {
+    animation-play-state: paused;
+  }
+  .card {
+    position: absolute;
+    background-image: var(--bg-image);
+    background-size: cover;
+    inset: 0;
+    border: 2px solid rgba(var(--color-card));
+    border-radius: 25px;
+    overflow: hidden;
+    transform: 
+        rotateY(calc(var(--angle-step) * var(--index) - 100deg))
+        translateZ(var(--translateZ))
+        scale(0.6); /* adds spacing */
+    backface-visibility: hidden;
+  }
+
+  .img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  
+  }
+  
+  .avatar-container {
+    position: absolute;
+    top: 650px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+  }
+  
+  .avatar {
+    width: 387.6px;
+    height: 497px;
+  }
+  

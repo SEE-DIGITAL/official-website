@@ -1,0 +1,112 @@
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Make the page scrollable */
+  width: 100vw;
+  perspective: 1200px;
+}
+
+/* .card-3d {
+  position: relative;
+  width: fit-content;
+  transform-style: preserve-3d;
+  z-index: 5;
+}
+
+.card-3d div {
+  position: absolute;
+  width: 376px;
+  height: 376px;
+  background-color: rgb(199, 199, 199);
+  border: solid 2px lightgray;
+  border-radius: 0.5rem;
+  top: 50%;
+  left: 50%;
+  transform-origin: center center;
+  transition: transform 0.1s ease-out;
+  will-change: transform;
+} */
+
+.card {
+  width: 375px;
+  height: 375px;
+  border: 1px solid black;
+  border-radius: 25px;
+  box-shadow: 0 2px 5px rgba(5, 5, 5, 0.1);
+  color: white;
+  text-align: center;
+}
+
+.card p {
+  font-size: 14px;
+  color: white;
+}
+
+.slider {
+  width: 100%;
+  height: var(--height);
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent, #000 10% 90%, transparent);
+}
+.slider .list {
+  display: flex;
+  width: 100%;
+  min-width: calc(var(--width) * var(--quantity));
+  position: relative;
+}
+.slider .list .item {
+  width: var(--width);
+  height: var(--height);
+  position: absolute;
+  left: 100%;
+  animation: autoRun 25s linear infinite;
+  transition: filter 0.5s;
+  animation-delay: calc(
+    (25s / var(--quantity)) * (var(--position) - 1) - 25s
+  ) !important;
+}
+.slider .list .item img {
+  width: 100%;
+}
+@keyframes autoRun {
+  from {
+    left: 100%;
+  }
+  to {
+    left: calc(var(--width) * -1);
+  }
+}
+.slider:hover .item {
+  animation-play-state: paused !important;
+  filter: grayscale(1);
+}
+.slider .item:hover {
+  filter: grayscale(0);
+}
+.slider[reverse="true"] .item {
+  animation: reversePlay 20s linear infinite;
+}
+@keyframes reversePlay {
+  from {
+    left: calc(var(--width) * -1);
+  }
+  to {
+    left: 100%;
+  }
+}
+
+
+.avatar-container {
+  position: absolute;
+  bottom: -250px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+.avatar {
+  width: 387.6px;
+  height: 497px;
+}
+
