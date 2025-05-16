@@ -5,6 +5,7 @@
     height: 100vh; /* Make the page scrollable */
     width: 100vw;
     perspective: 3000px;
+    margin-bottom: 500px;
   }
 
   
