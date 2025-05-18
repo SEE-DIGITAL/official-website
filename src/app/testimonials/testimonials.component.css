@@ -1,0 +1,205 @@
+:host {
+    display: flex;
+    width: 95vw;
+    height: 150vh; /* Make the page scrollable */
+    overflow: hidden; /* Prevent overall horizontal scroll */
+  }
+  
+  .testimonials-layout {
+    display: flex; /* Arrange cards and image side by side */
+    align-items: center; /* Vertically align the cards and the image */
+    width: 100%;
+    height: 100%;
+  }
+  
+  .cards-container {
+    flex: 1; /* Allow the cards container to take up available width */
+    display: flex;
+    justify-content: center; /* Center the cards horizontally within their container */
+    align-items: center; /* Center the cards vertically within their container */
+    perspective: 1200px; /* Maintain the perspective for the card effects */
+    padding-left: 200px; /* Add some left padding for spacing */
+  }
+  
+  .cards {
+    position: relative; /* Maintain relative positioning for the absolute cards */
+  }
+  
+  .card {
+    z-index: 1;
+    position: absolute; /* Keep the absolute positioning for the card stack effect */
+    width: 557px;
+    height: 501px;
+    border-radius: 54.36px;
+    transition: all .5s ease-out;
+    overflow: hidden;
+    backdrop-filter: blur(216.24px); /* Adjust the blur radius as needed */
+    -webkit-backdrop-filter: blur(216.24px); /* For Safari and older Chrome versions */
+    transform: translateX(0px) translateY(0px) perspective(700px) rotateX(0deg) rotateY(0deg) rotateZ(-2deg);
+    display: flex; /* To center the testimonial content within the card (optional) */
+    justify-content: center; /* To center the testimonial content horizontally (optional) */
+    align-items: center; /* To center the testimonial content vertically (optional) */
+    padding: 20px; /* Add some padding around the testimonial content */
+    flex-direction: column; /* Stack the elements vertically if needed */
+  }
+
+  
+  .card.one {
+    top: -100px;
+    right: 0px;
+    background: linear-gradient(to right, #434343 0%, #000000 100%);
+  }
+  
+  .card.two {
+    top: -100px;
+    right: -100px;
+    background: linear-gradient(to right, #434343 0%, #000000 100%);
+  }
+  
+  .card.three {
+    top: -100px;
+    right: -200px;
+    background: linear-gradient(to right, #434343 0%, #000000 100%);
+  }
+  
+  .card.four {
+    top: -100px;
+    right: -300px;
+    background: linear-gradient(to right, #434343 0%, #000000 100%);
+  }
+  
+  .card.five {
+    top: -100px;
+    right: -400px;
+    background: linear-gradient(to right, #434343 0%, #000000 100%);
+  }
+  
+  .card.six {
+    top: -100px;
+    right: -500px;
+    background: linear-gradient(to right, #434343 0%, #000000 100%);
+  }
+  
+  .card:hover {
+    z-index: 4;
+    transform: perspective(1000px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) !important;
+    transition: all .5s ease-out;
+  }
+  
+  .cardDetails {
+    width: 55%;
+    height: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    background: rgba(0,0,0,0.8);
+    transition: .5s;
+    transform-origin: left;
+    transform: perspective(2000px) rotateY(-90deg);
+  }
+  
+  .card:hover .cardDetails {
+    transform: perspective(2000px) rotateY(0deg);
+  }
+  
+  .cardDetailsHaeder {
+    font-weight: 600;
+    color: white;
+  }
+  
+  .cardDetailsButton {
+    padding: 3px 6px;
+    border-radius: 25px;
+    background-color: white;
+    color: #000;
+    font-weight: 600;
+  }
+  
+  .image-container {
+    width: 517.07px; /* Set the width of the image container */
+    height: 100%; /* Make the image container take full height */
+    display: flex;
+    margin-top: 450px;
+    justify-content: flex-end; /* Align image to the right */
+    align-items: center; /* Vertically center the image */
+  }
+  
+  .side-image {
+    width: 100%; /* Make the image fill its container */
+    height: auto; /* Maintain aspect ratio */
+    max-height: 734px; /* Ensure it doesn't exceed the specified height */
+    z-index: 2; /* Place the image above the cards (which have a default z-index of 1) */
+  }
+
+  .testimonial-content {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20%;
+    margin-right: 20%;
+    align-items: flex-start; /* Align text to the left */
+    color: white; /* Set a default text color */
+  }
+  
+  .quote-mark {
+    font-size: 15em; /* Adjust the size of the quote mark */
+    line-height: 1;
+    margin-bottom: -100px;
+    margin-left: -20px;
+  
+  }
+  
+  .testimonial-text {
+    font-size: 1.3em; /* Adjust the font size of the testimonial text */
+    margin-bottom: 50px;
+    line-height: 1.5;
+    
+  }
+  .rating {
+    font-size: 1.8em;
+    margin-bottom: 0.8em;
+    color: #faab00;
+    font-weight: bold;
+    position: relative;
+    width: max-content;
+  }
+  
+  .testimonial-author {
+    display: flex;
+    align-items: center;
+   
+  }
+  
+  .author-image {
+    width: 94px; /* Adjust the size of the author's image */
+    height: 91px;
+    border-radius: 50%; /* Make it circular */
+    overflow: hidden;
+    margin-right: 15px;
+  }
+  
+  .author-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the image fills the circle without distortion */
+  }
+  
+  .author-details {
+    display: flex;
+    flex-direction: column;
+    
+  }
+
+
+  
+  
+  .author-name {
+    font-weight: bold;
+    font-size: 1.5em;
+  }
+  
+  .author-title {
+    font-size: 1.2em;
+    color: lightgray; /* Adjust the color of the title */
+  }
